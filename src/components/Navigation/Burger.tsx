@@ -25,7 +25,7 @@ const StyledBurger = styled.div<StyledBurgerProps>`
     height: 0.25rem;
     background-color: ${(props) => (props.open ? 'black' : 'red')};
     transform-origin: 1px;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
     z-index: 1000;
 
     &:nth-child(1) {

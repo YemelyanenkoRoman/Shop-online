@@ -1,4 +1,4 @@
 export interface NavListT {
-  value: string;
+  value: string | any;
   link: string;
 }

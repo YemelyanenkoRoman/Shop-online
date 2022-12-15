@@ -1,6 +1,7 @@
 import { NavListT } from '../../types/types';
+import { SvgSelector } from './SvgSelector';
 
 export const serviceList: NavListT[] = [
-  { value: 'Search', link: '/' },
-  { value: 'Shopping Cart', link: '/' },
+  { value: <SvgSelector id={'search'} />, link: '/' },
+  { value: <SvgSelector id={'shopping_cart'} />, link: '/' },
 ];

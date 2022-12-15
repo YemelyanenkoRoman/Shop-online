@@ -19,10 +19,14 @@ const Nav = styled.nav<NavProps>`
   display: flex;
   align-items: center;
   justify-content: ${(props) => (props.open ? 'flex-start' : 'space-between')};
+  font-family: 'Montserrat', sans-serif;
 
   ul {
     display: flex;
     flex-direction: row;
+    /* &:first-child {
+      margin-right: 33.5vw;
+    } */
   }
 
   li {
@@ -32,6 +36,10 @@ const Nav = styled.nav<NavProps>`
   .navigation {
     display: flex;
   }
+
+  /* .logo {
+    margin-right: 33.5vw;
+  } */
 
   @media (max-width: 768px) {
     flex-direction: column;

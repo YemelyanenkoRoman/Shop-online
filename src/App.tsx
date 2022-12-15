@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Burger } from './components/Navigation/Burger';
-import { Navbar } from './components/Navigation/Navbar';
 import { Main } from './pages/Main';
 
-function App() {
+import GlobalStyles from './globalStyles';
+
+const App = () => {
   return (
     <>
+      <GlobalStyles />
       <Router>
         <Burger />
         <Routes>
@@ -15,6 +17,6 @@ function App() {
       </Router>
     </>
   );
-}
+};
 
 export default App;
