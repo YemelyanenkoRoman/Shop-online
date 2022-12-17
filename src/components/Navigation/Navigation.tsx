@@ -1,30 +1,18 @@
 import React, { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { NavListT } from '../../types/types';
+import { Navlink } from '../Router/Link';
 
 interface NavigationProps {
   items: NavListT[];
 }
 
 const ListLinks = styled.ul`
+  display: flex;
+  flex-direction: row;
   list-style: none;
-
-  font-weight: 500;
   font-size: 14px;
-  line-height: 20px;
-`;
-
-const Navlink = styled(NavLink)`
-  text-decoration: none;
-  color: black;
-
-  svg {
-    transition: all 0.3s linear;
-    &:hover {
-      fill: #5f6368;
-    }
-  }
 `;
 
 export const Navigation: FC<NavigationProps> = ({ items }) => {
@@ -32,7 +20,7 @@ export const Navigation: FC<NavigationProps> = ({ items }) => {
     <ListLinks>
       {items.map((item) => {
         return (
-          <li key={item.value}>
+          <li key={item.id}>
             <Navlink to={item.link}>{item.value}</Navlink>
           </li>
         );

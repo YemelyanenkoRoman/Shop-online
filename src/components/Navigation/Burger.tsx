@@ -1,18 +1,21 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Navbar } from './Navbar';
 
-interface StyledBurgerProps {
+interface BurgerProps {
+  open: boolean;
+  setStateOpen: () => void;
+}
+
+interface BurgerStyledProps {
   open: boolean;
 }
 
-const StyledBurger = styled.div<StyledBurgerProps>`
+const BurgerStyled = styled.div<BurgerStyledProps>`
   width: 2rem;
   height: 2rem;
-  position: absolute;
   top: 15px;
-  right: 15px;
   display: none;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     display: flex;
@@ -23,7 +26,7 @@ const StyledBurger = styled.div<StyledBurgerProps>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${(props) => (props.open ? 'black' : 'red')};
+    background-color: #000;
     transform-origin: 1px;
     transition: all 0.2s linear;
     z-index: 1000;
@@ -43,17 +46,12 @@ const StyledBurger = styled.div<StyledBurgerProps>`
   }
 `;
 
-export const Burger = () => {
-  const [open, setOpen] = useState(false);
-
+export const Burger: FC<BurgerProps> = (props) => {
   return (
-    <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <Navbar open={open} />
-    </>
+    <BurgerStyled open={props.open} onClick={props.setStateOpen}>
+      <div />
+      <div />
+      <div />
+    </BurgerStyled>
   );
 };
