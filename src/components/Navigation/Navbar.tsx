@@ -1,10 +1,6 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
-import { Navigation } from './Navigation';
-import { serviceList } from './serviceList';
-import { navList } from './navList';
-import { Burger } from './Burger';
-import { Logo } from '../Logo/Logo';
+import { Navigation, Burger, Logo, navList, serviceList } from '../index';
 
 interface NavBarProps {
   open: boolean;

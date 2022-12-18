@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { Navigation } from './Navigation';
-import { navList } from './navList';
 import styled from 'styled-components';
+import { Navigation, navList } from './index';
 
 interface ServicePagesProps {
   open: boolean;
