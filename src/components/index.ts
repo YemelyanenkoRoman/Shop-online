@@ -1,3 +1,3 @@
-export * from './Navigation/index';
-export * from './Logo/index';
-export * from './Router/index';
+export * from './Navigation';
+export * from './Logo';
+export * from './Router';

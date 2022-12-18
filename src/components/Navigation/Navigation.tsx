@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { NavListT } from '../../types/types';
-import { Navlink } from '../index';
+import { Navlink } from '../Router';
 
 interface NavigationProps {
   items: NavListT[];

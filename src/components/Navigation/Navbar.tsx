@@ -1,12 +1,16 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
-import { Navigation, Burger, Logo, navList, serviceList } from '../index';
+import { Logo } from '../Logo';
+import { Burger } from './Burger';
+import { Navigation } from './Navigation';
+import { navList } from './navList';
+import { serviceList } from './serviceList';
 
 interface NavBarProps {
   open: boolean;
 }
 
-const NavBar = styled.nav<NavBarProps>`
+const StyledNavbar = styled.nav<NavBarProps>`
   max-width: 1200px;
   margin: 0 auto;
 
@@ -62,13 +66,13 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <NavBar open={open}>
+    <StyledNavbar open={open}>
       <Burger open={open} setStateOpen={() => setOpen(!open)} />
       <Logo />
       <div className="ServisePagesNav">
         <Navigation items={navList} />
       </div>
       <Navigation items={serviceList} />
-    </NavBar>
+    </StyledNavbar>
   );
 };
