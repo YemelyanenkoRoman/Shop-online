@@ -1,0 +1,14 @@
+[
+  {
+    "name": "first-product",
+    "id": 1
+  },
+  {
+    "name": "second-product",
+    "id": 2
+  },
+  {
+    "name": "third-product",
+    "id": 3
+  }
+]

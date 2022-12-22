@@ -1,0 +1,11 @@
+[
+  { "name": "tables", "id": "tables" },
+  {
+    "name": "chairs",
+    "id": "chairs"
+  },
+  {
+    "name": "bookshalf",
+    "id": "bookshalfs"
+  }
+]
