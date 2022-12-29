@@ -7,6 +7,14 @@ export const fetchCategory = createAsyncThunk('category/fetchCategory', async fu
   return categoryList;
 });
 
+// export const fetchCategory = createAsyncThunk(
+//   'users/fetchByIdStatus',
+//   async (categoryId: string, thunkAPI) => {
+//     const response = await categoryList.fetchById(categoryId)
+//     return response.data
+//   }
+// )
+
 interface categoryState {
   category: any;
   status?: 'idle' | 'pending' | 'succeeded' | 'failed';
@@ -32,14 +40,12 @@ export const categorySlice = createSlice({
     builder.addCase(fetchCategory.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.category = action.payload;
-      console.log(action.payload);
-      console.log(state.status);
     });
 
-    // builder.addCase(fetchCategory, (state, action) => {
-    //   state.status = 'succeeded';
-    //   state.error = action.payload as string;
-    // });
+    builder.addCase(fetchCategory.rejected, (state, action) => {
+      state.status = 'succeeded';
+      state.error = action.payload as string;
+    });
   },
 });
 

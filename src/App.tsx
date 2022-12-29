@@ -13,7 +13,8 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="category" element={<Main />} />
+          <Route path="category/:id" element={<Main />} />
         </Routes>
       </Router>
     </>
