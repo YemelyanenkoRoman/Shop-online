@@ -23,10 +23,17 @@ export const goodsSlice = createSlice({
   name: 'goods',
   initialState: initialState,
   reducers: {
-    setChange(state, action) {
+    setChangeToLowerPrice(state, action) {
       console.log(state.goods, 'www');
       // state.goods = action.payload;
       const down = state.goods.sort((a: any, b: any) => b.id - a.id);
+      console.log(action.payload);
+    },
+
+    setChangeToHigherPrice(state, action) {
+      console.log(state.goods, 'www');
+      // state.goods = action.payload;
+      const down = state.goods.sort((a: any, b: any) => a.id - b.id);
       console.log(action.payload);
     },
   },
@@ -49,5 +56,5 @@ export const goodsSlice = createSlice({
   },
 });
 
-export const { setChange } = goodsSlice.actions;
+export const { setChangeToLowerPrice, setChangeToHigherPrice } = goodsSlice.actions;
 export default goodsSlice.reducer;
