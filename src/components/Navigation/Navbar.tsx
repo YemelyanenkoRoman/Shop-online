@@ -1,7 +1,9 @@
 import React, { FC, useState } from 'react';
 import styled from 'styled-components';
+import { CategoryList } from '../../containers/CategoryList/CategoryList';
 import { Logo } from '../Logo';
 import { Burger } from './Burger';
+import { Catalog } from './Catalog';
 import { Navigation } from './Navigation';
 import { navList } from './navList';
 import { serviceList } from './serviceList';
@@ -29,11 +31,12 @@ const StyledNavbar = styled.nav<NavBarProps>`
   }
 
   .ServisePagesNav {
+    //test style display flex
+    display: flex;
+
     letter-spacing: 1px;
     li {
-      &:not(:last-child) {
-        padding-right: ${(props) => (props.open ? '0' : '70px')};
-      }
+      padding-right: ${(props) => (props.open ? '0' : '70px')};
     }
 
     @media (max-width: 768px) {
@@ -65,14 +68,18 @@ const StyledNavbar = styled.nav<NavBarProps>`
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const [openCatalog, setOpenCatalog] = useState(false);
+
   return (
     <StyledNavbar open={open}>
       <Burger open={open} setStateOpen={() => setOpen(!open)} />
       <Logo />
       <div className="ServisePagesNav">
         <Navigation items={navList} />
+        <Catalog setOpenCatalog={() => setOpenCatalog(!openCatalog)} />
       </div>
       <Navigation items={serviceList} />
+      {openCatalog ? <CategoryList /> : <></>}
     </StyledNavbar>
   );
 };
