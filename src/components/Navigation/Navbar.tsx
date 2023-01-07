@@ -7,6 +7,7 @@ import { Catalog } from './Catalog';
 import { Navigation } from './Navigation';
 import { navList } from './navList';
 import { serviceList } from './serviceList';
+import { Fade } from '../Fade/Fade';
 
 interface NavBarProps {
   open: boolean;
@@ -67,7 +68,6 @@ const StyledNavbar = styled.nav<NavBarProps>`
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const [openCatalog, setOpenCatalog] = useState(false);
 
   return (
@@ -79,7 +79,9 @@ export const Navbar = () => {
         <Catalog setOpenCatalog={() => setOpenCatalog(!openCatalog)} />
       </div>
       <Navigation items={serviceList} />
-      {openCatalog ? <CategoryList /> : <></>}
+      <Fade in={openCatalog}>
+        <CategoryList />
+      </Fade>
     </StyledNavbar>
   );
 };
