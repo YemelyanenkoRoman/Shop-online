@@ -17,9 +17,10 @@ const StuledButton = styled.div`
   list-style: none;
   color: #fff;
   transition: all 0.3s linear;
-  &:not(:last-child) {
+  /* &:not(:last-child) {
     padding-right: 70px;
-  }
+  } */
+  padding-right: 70px;
   &:hover {
     color: #000;
   }

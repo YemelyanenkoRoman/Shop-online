@@ -1,14 +1,20 @@
 [
   {
-    "name": "first-product",
-    "id": 1
+    "name": "Rack",
+    "id": "Rack",
+    "price": 200,
+    "description": "wood and iron rack"
   },
   {
     "name": "second-product",
-    "id": 2
+    "id": "secondPoduct",
+    "price": 180,
+    "description": "wood and iron rack"
   },
   {
     "name": "third-product",
-    "id": 3
+    "id": "ThirdProduct",
+    "price": 99,
+    "description": "wood and iron rack"
   }
 ]

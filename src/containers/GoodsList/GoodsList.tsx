@@ -14,14 +14,14 @@ export const GoodsList = () => {
     <>
       {goods.length >= 1 ? (
         <>
-          <button onClick={() => dispatch(setChangeToLowerPrice([]))}>ToLowerPrice</button>
-          <button onClick={() => dispatch(setChangeToHigherPrice([]))}>ToHigherPrice</button>
+          <button onClick={() => dispatch(setChangeToLowerPrice([]))}>From Higher Price</button>
+          <button onClick={() => dispatch(setChangeToHigherPrice([]))}>From Lower Price</button>
         </>
       ) : (
         <></>
       )}
       {goods.map((item: any) => {
-        return <Goods key={item.id} name={item.name} id={item.id} />;
+        return <Goods key={item.id} name={item.name} id={item.id} price={item.price} description={item.description} />;
       })}
     </>
   );

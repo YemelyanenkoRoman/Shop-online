@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useRef } from 'react';
 import { Transition } from 'react-transition-group';
 
 interface FadeProps {
@@ -24,8 +25,9 @@ const defaultStyle = {
 type TransitionKeys = 'entering' | 'entered' | 'exiting' | 'exited';
 
 export const Fade: FC<FadeProps> = (props) => {
+  const nodeRef = useRef(null);
   return (
-    <Transition in={props.in} timeout={duration || 300}>
+    <Transition nodeRef={nodeRef} in={props.in} timeout={duration || 300}>
       {/* {openCatalog ? <CategoryList /> : <></>} */}
 
       {(state) => {

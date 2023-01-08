@@ -6,6 +6,7 @@ import { Navlink } from '../Router';
 
 interface NavigationProps {
   items: NavListT[];
+  setOpenCatalog?: () => void;
 }
 
 const ListLinks = styled.ul`
@@ -15,12 +16,12 @@ const ListLinks = styled.ul`
   font-size: 14px;
 `;
 
-export const Navigation: FC<NavigationProps> = ({ items }) => {
+export const Navigation: FC<NavigationProps> = (props) => {
   return (
     <ListLinks>
-      {items.map((item) => {
+      {props.items.map((item) => {
         return (
-          <li key={item.id}>
+          <li key={item.id} onClick={props.setOpenCatalog}>
             <Navlink to={item.link}>{item.value}</Navlink>
           </li>
         );

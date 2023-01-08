@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 interface GoodsProps {
   name: string;
-  id: string | number;
+  id: string;
+  price: number;
+  description: string;
 }
 
 const GoodsCard = styled.li`
@@ -17,8 +19,11 @@ export const Goods = (props: GoodsProps) => {
   return (
     <ul>
       <GoodsCard key={props.id}>
-        <a>{props.name}</a>
+        <p>{props.name}</p>
         <p>{props.id}</p>
+        <p>{props.price}</p>
+        <p>{props.description}</p>
+        <button>Put in shopping cart</button>
       </GoodsCard>
     </ul>
   );

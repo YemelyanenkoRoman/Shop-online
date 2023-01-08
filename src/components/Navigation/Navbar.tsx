@@ -75,10 +75,10 @@ export const Navbar = () => {
       <Burger open={open} setStateOpen={() => setOpen(!open)} />
       <Logo />
       <div className="ServisePagesNav">
-        <Navigation items={navList} />
+        <Navigation items={navList} setOpenCatalog={() => setOpenCatalog(false)} />
         <Catalog setOpenCatalog={() => setOpenCatalog(!openCatalog)} />
       </div>
-      <Navigation items={serviceList} />
+      <Navigation items={serviceList} setOpenCatalog={() => setOpenCatalog(false)} />
       <Fade in={openCatalog}>
         <CategoryList />
       </Fade>

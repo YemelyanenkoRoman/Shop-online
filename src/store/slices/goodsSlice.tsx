@@ -26,14 +26,14 @@ export const goodsSlice = createSlice({
     setChangeToLowerPrice(state, action) {
       console.log(state.goods, 'www');
       // state.goods = action.payload;
-      const down = state.goods.sort((a: any, b: any) => b.id - a.id);
+      const down = state.goods.sort((a: any, b: any) => b.price - a.price);
       console.log(action.payload);
     },
 
     setChangeToHigherPrice(state, action) {
       console.log(state.goods, 'www');
       // state.goods = action.payload;
-      const down = state.goods.sort((a: any, b: any) => a.id - b.id);
+      const down = state.goods.sort((a: any, b: any) => a.price - b.price);
       console.log(action.payload);
     },
   },
