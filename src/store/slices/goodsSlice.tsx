@@ -24,14 +24,14 @@ export const goodsSlice = createSlice({
   initialState: initialState,
   reducers: {
     setChangeToLowerPrice(state, action) {
-      console.log(state.goods, 'www');
+      console.log(state.goods, 'sort to lower price');
       // state.goods = action.payload;
       const down = state.goods.sort((a: any, b: any) => b.price - a.price);
       console.log(action.payload);
     },
 
     setChangeToHigherPrice(state, action) {
-      console.log(state.goods, 'www');
+      console.log(state.goods, 'sort to lower price');
       // state.goods = action.payload;
       const down = state.goods.sort((a: any, b: any) => a.price - b.price);
       console.log(action.payload);

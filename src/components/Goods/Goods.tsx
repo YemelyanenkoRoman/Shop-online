@@ -23,7 +23,15 @@ export const Goods = (props: GoodsProps) => {
         <p>{props.id}</p>
         <p>{props.price}</p>
         <p>{props.description}</p>
-        <button>Put in shopping cart</button>
+        <button
+          className="add"
+          onClick={() => {
+            console.log(props.id);
+          }}
+          id={props.id}
+        >
+          Put in shopping cart
+        </button>
       </GoodsCard>
     </ul>
   );
