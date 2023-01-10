@@ -16,8 +16,6 @@ export const shoppingCartSlice = createSlice({
     setIncrement(state, action: PayloadAction<string>) {
       console.log(action.payload);
       state.value.push(action.payload);
-
-      console.log(state.value);
     },
   },
 });

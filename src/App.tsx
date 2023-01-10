@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Navbar } from './components/Navigation/Navbar';
-import { Main } from './pages/Main/Main';
-
-import GlobalStyles from './globalStyles';
 import { GoodsCards } from './pages/GoodsCards/GoodsCards';
+import GlobalStyles from './globalStyles';
+import { ShoppingCart } from './pages/ShoppingCart/ShoppingCart';
 
 const App = () => {
   return (
@@ -15,6 +14,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="category/:id" element={<GoodsCards />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
         </Routes>
       </Router>
     </>
